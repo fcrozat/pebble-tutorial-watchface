@@ -11,9 +11,9 @@ static void update_time() {
     static char buffer[] = "00:00";
 
     if (clock_is_24h_style() == true) {
-        strftime(&buffer, sizeof(buffer), "%H:%M", tick_time);
+        strftime(&buffer, sizeof("00:00"), "%H:%M", tick_time);
     } else {
-        strftime(&buffer, sizeof(buffer), "%I:%M", tick_time);
+        strftime(&buffer, sizeof("00:00"), "%I:%M", tick_time);
     }
 
     text_layer_set_text (s_time_layer, buffer);
