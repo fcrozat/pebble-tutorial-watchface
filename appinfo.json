@@ -7,7 +7,14 @@
     "longName": "Tutorial 1",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "characterRegex": "[0-9:.]",
+                "file": "fonts/perfect-dos-vga.ttf",
+                "name": "RESOURCE_ID_FONT_PERFECT_DOS_48",
+                "type": "font"
+            }
+        ]
     },
     "shortName": "Tutorial 1",
     "uuid": "31c10d3a-af1a-4942-9b6b-b06435f79070",
