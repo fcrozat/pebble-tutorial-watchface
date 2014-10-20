@@ -9,6 +9,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/geeko-button.png",
+                "name": "IMAGE_GEEKO",
+                "type": "png"
+            },
+            {
                 "characterRegex": "[0-9:.]",
                 "file": "fonts/perfect-dos-vga.ttf",
                 "name": "FONT_PERFECT_DOS_48",
