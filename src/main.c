@@ -3,6 +3,8 @@
 static Window* s_main_window;
 static TextLayer* s_time_layer;
 static GFont *s_time_font;
+static BitmapLayer *s_background_layer;
+static GBitmap *s_background_bitmap;
 
 
 static void update_time() {
@@ -26,6 +28,10 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 
 static void main_load_window(Window *window) {
 
+    s_background_bitmap = gbitmap_create_with_resource (RESOURCE_ID_IMAGE_GEEKO);
+    s_background_layer = bitmap_layer_create(GRect(0,0,144,168));
+    bitmap_layer_set_bitmap(s_background_layer,s_background_bitmap);
+    layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
 
     s_time_layer = text_layer_create(GRect(5, 52, 139, 50));
 
@@ -40,6 +46,7 @@ static void main_load_window(Window *window) {
     s_time_font = fonts_load_custom_font (resource_get_handle (RESOURCE_ID_FONT_PERFECT_DOS_48));
     text_layer_set_font (s_time_layer, s_time_font);
 
+
     tick_timer_service_subscribe (MINUTE_UNIT, tick_handler);
 
 }
@@ -50,6 +57,9 @@ static void main_unload_window(Window *window) {
 
     text_layer_destroy (s_time_layer);
     fonts_unload_custom_font(s_time_font);
+
+    gbitmap_destroy(s_background_bitmap);
+    bitmap_layer_destroy(s_background_layer);
 }
 
 
