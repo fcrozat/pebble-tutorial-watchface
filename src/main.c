@@ -44,7 +44,7 @@ static void main_load_window(Window *window) {
 
     text_layer_set_text (s_text_layer, "#hackweek");
 
-    text_layer_set_font (s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+    text_layer_set_font (s_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
     text_layer_set_text_alignment (s_text_layer, GTextAlignmentCenter);
 
     layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_text_layer));
