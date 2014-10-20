@@ -2,6 +2,7 @@
 
 static Window* s_main_window;
 static TextLayer* s_time_layer;
+static GFont *s_time_font;
 
 
 static void update_time() {
@@ -25,7 +26,8 @@ static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 
 static void main_load_window(Window *window) {
 
-    s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
+
+    s_time_layer = text_layer_create(GRect(5, 52, 139, 50));
 
     text_layer_set_background_color (s_time_layer, GColorClear);
     text_layer_set_text_color (s_time_layer, GColorBlack);
@@ -34,6 +36,9 @@ static void main_load_window(Window *window) {
     text_layer_set_text_alignment (s_time_layer, GTextAlignmentCenter);
 
     layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
+
+    s_time_font = fonts_load_custom_font (resource_get_handle (RESOURCE_ID_FONT_PERFECT_DOS_48));
+    text_layer_set_fonts(s_time_layer, s_time_font);
 
     tick_timer_service_subscribe (MINUTE_UNIT, tick_handler);
 
@@ -44,6 +49,7 @@ static void main_unload_window(Window *window) {
     tick_timer_service_unsubscribe ();
 
     text_layer_destroy (s_time_layer);
+    font_unload_custom_font(s_time_font);
 }
 
 
