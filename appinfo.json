@@ -11,7 +11,7 @@
             {
                 "characterRegex": "[0-9:.]",
                 "file": "fonts/perfect-dos-vga.ttf",
-                "name": "RESOURCE_ID_FONT_PERFECT_DOS_48",
+                "name": "FONT_PERFECT_DOS_48",
                 "type": "font"
             }
         ]
