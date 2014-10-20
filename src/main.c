@@ -38,7 +38,7 @@ static void main_load_window(Window *window) {
     layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
 
     s_time_font = fonts_load_custom_font (resource_get_handle (RESOURCE_ID_FONT_PERFECT_DOS_48));
-    text_layer_set_fonts(s_time_layer, s_time_font);
+    text_layer_set_font (s_time_layer, s_time_font);
 
     tick_timer_service_subscribe (MINUTE_UNIT, tick_handler);
 
@@ -49,7 +49,7 @@ static void main_unload_window(Window *window) {
     tick_timer_service_unsubscribe ();
 
     text_layer_destroy (s_time_layer);
-    font_unload_custom_font(s_time_font);
+    fonts_unload_custom_font(s_time_font);
 }
 
 
