@@ -31,6 +31,7 @@ static void main_load_window(Window *window) {
     s_background_bitmap = gbitmap_create_with_resource (RESOURCE_ID_IMAGE_GEEKO);
     s_background_layer = bitmap_layer_create(GRect(0,0,144,168));
     bitmap_layer_set_bitmap(s_background_layer,s_background_bitmap);
+    bitmap_layer_set_alignment(s_background_layer,GAlignTop);
     layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
 
     s_time_layer = text_layer_create(GRect(5, 52, 139, 50));
