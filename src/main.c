@@ -7,7 +7,7 @@ static void main_load_window(Window *window) {
 
     s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
 
-    text_layer_set_background (s_time_layer, GColorClear);
+    text_layer_set_background_color (s_time_layer, GColorClear);
     text_layer_set_text_color (s_time_layer, GColorBlack);
     text_layer_set_text (s_time_layer, "00:00");
 
