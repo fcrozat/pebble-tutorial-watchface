@@ -47,6 +47,8 @@ static void main_load_window(Window *window) {
     text_layer_set_font (s_text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
     text_layer_set_text_alignment (s_text_layer, GTextAlignmentCenter);
 
+    layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_text_layer));
+
     s_time_layer = text_layer_create(GRect(5, 52, 139, 50));
 
     text_layer_set_background_color (s_time_layer, GColorClear);
