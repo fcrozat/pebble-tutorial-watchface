@@ -6,7 +6,7 @@ static TextLayer* s_time_layer;
 
 static void update_time() {
     time_t temp = time(NULL);
-    struct_tm *tick_time = localtime(&temp);
+    struct tm *tick_time = localtime(&temp);
 
     static char buffer[] = "00:00";
 
@@ -19,7 +19,7 @@ static void update_time() {
     text_layer_set_text (s_time_layer, buffer);
 }
 
-static void tick_handler(struct_tm *tick_time, TimeUnits units_changed) {
+static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
     update_time();
 }
 
