@@ -39,10 +39,10 @@ static void main_load_window(Window *window) {
     text_layer_set_background_color (s_text_layer, GColorClear);
     text_layer_set_text_color (s_text_layer, GColorBlack);
 
-    text_layer_set_background_color (s_time_layer, GColorClear);
-    text_layer_set_text_color (s_time_layer, GColorBlack);
+    text_layer_set_background_color (s_text_layer, GColorClear);
+    text_layer_set_text_color (s_text_layer, GColorBlack);
 
-    text_layer_set_text (s_time_layer, "#hackweek");
+    text_layer_set_text (s_text_layer, "#hackweek");
 
     text_layer_set_font (s_text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
     text_layer_set_text_alignment (s_text_layer, GTextAlignmentCenter);
