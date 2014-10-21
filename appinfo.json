@@ -1,7 +1,10 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_TEMPERATURE": 0
+    },
     "capabilities": [
-        ""
+        "location"
     ],
     "companyName": "Frederic Crozat",
     "longName": "Tutorial 1",
@@ -9,15 +12,15 @@
     "resources": {
         "media": [
             {
-                "file": "images/geeko-button.png",
-                "name": "IMAGE_GEEKO",
-                "type": "png"
-            },
-            {
                 "characterRegex": "[0-9:.]",
                 "file": "fonts/perfect-dos-vga.ttf",
                 "name": "FONT_PERFECT_DOS_48",
                 "type": "font"
+            },
+            {
+                "file": "images/geeko-button.png",
+                "name": "IMAGE_GEEKO",
+                "type": "png"
             }
         ]
     },
